@@ -5,7 +5,7 @@ const ms = require('ms');
 const weather = require('weather-js');
 const superagent = require("superagent");
 
-const token = 'NjY0MjA1MzcwNzg0MzUwMjA4.XhTriA.wI1n-XMwmxEjpbRS8s-ejHACuqk';
+const token = 'NjY0MjA1MzcwNzg0MzUwMjA4.XhTtIg.RlyrPPLT9U4pueXUQXVAM0F_PJk';
 
 const prefix = 'hq!';
 
