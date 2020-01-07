@@ -1,1 +1,2 @@
-# hq-bot1
+# Bluxi-Bot
+Hosted on Heroku
