@@ -5,9 +5,9 @@ const ms = require('ms');
 const weather = require('weather-js');
 const superagent = require("superagent");
 
-const token = 'NjU3ODcwNzgxNzkxMDc2MzYz.Xf_XKA.wEwQpONG7NfB2fXQTerWIy4WLI8';
+const token = 'NjY0MjA1MzcwNzg0MzUwMjA4.XhTriA.wI1n-XMwmxEjpbRS8s-ejHACuqk';
 
-const prefix = 'b!';
+const prefix = 'hq!';
 
 var version = '1.0.1';
 
@@ -17,7 +17,7 @@ const usedCommandRecently = new Set();
 
 bot.on('ready', () =>{
     console.log('This bot is online')
-    bot.user.setActivity(`${bot.guilds.size} SERVERS | For Commands , use : b!help`, { type: 'WATCHING'});
+    bot.user.setActivity(`${bot.guilds.size} SERVERS | For Commands , use : hq!help`, { type: 'WATCHING'});
 })
 
 bot.on('guildMemberAdd', member =>{
@@ -52,9 +52,9 @@ bot.on('message', async message =>{
           .setColor(0xF0000)
           .setAuthor(`${message.guild.name} Info`, message.guild.iconURL)
           .setDescription('Acest bot este pentru welcome-leave si pentru moderare !')
-          .addField("Moderation Commands", "b!mute [user] [durata] - pentru a oferi mute cuiva \n b!ban [numele] - pentru a da ban cuiva \n b!kick [numele] - pentru a da kick cuiva \n b!send [user] [mesaj] - pentru ai transmite prin bot un mesaj cuiva !")
-          .addField("Info Commands", "b!help - pentru a afla toate comenzile disponibile \n b!discord - pentru a afla discord-ul nostru oficial \n b!cooldown - pentru a afla timpul de asteptare \n b!serverinfo - pentru a afla statisticile server-ului !")
-          .addField("Fun Commands", "b!ping - si bot-ul iti trimite mesajul 'pong' \n b!cat - trimite o poza cu o pisica")
+          .addField("Moderation Commands", "hq!mute [user] [durata] - pentru a oferi mute cuiva \n hq!ban [numele] - pentru a da ban cuiva \n hq!kick [numele] - pentru a da kick cuiva \n hq!send [user] [mesaj] - pentru ai transmite prin bot un mesaj cuiva !")
+          .addField("Info Commands", "hq!help - pentru a afla toate comenzile disponibile \n hq!discord - pentru a afla discord-ul nostru oficial \n hq!cooldown - pentru a afla timpul de asteptare \n hq!serverinfo - pentru a afla statisticile server-ului !")
+          .addField("Fun Commands", "hq!ping - si bot-ul iti trimite mesajul 'pong' \n hq!cat - trimite o poza cu o pisica")
           .addField("Pentru a invita botul pe serverul tau", "[APASA AICI](https://discordapp.com/oauth2/authorize?client_id=657870781791076363&scope=bot&permissions=805314622)")
           .setFooter('Bot created by FaNnN#7247', 'https://imgur.com/a/C2QuBJq');
 
@@ -65,7 +65,7 @@ bot.on('message', async message =>{
           const Embed2 = new RichEmbed()
           .setTitle("Official Discord Server")
           .setColor(0xF0000)
-          .setDescription('https://discord.gg/uxTekdS')
+          .setDescription('https://discord.gg/u2hRece')
 
           message.author.send(Embed2);
           message.channel.send("Detaliile au fost trimise in privat!");
@@ -77,8 +77,8 @@ bot.on('message', async message =>{
             let person = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]))
             if(!person) return message.reply("Specifica o persona mai intai!");
 
-            let mainrole = message.guild.roles.find(role => role.name === "👨Membru");
-            let muterole = message.guild.roles.find(role => role.name === "🔇MUTED");
+            let mainrole = message.guild.roles.find(role => role.name === "👨Member");
+            let muterole = message.guild.roles.find(role => role.name === "MUTED");
 
             if(!muterole) return message.reply("Nu am gasit acel rol de mute");
             
@@ -185,7 +185,7 @@ bot.on('message', async message =>{
             .addField("Guild Owner:", `${message.guild.owner}`, true)
             .addField("Member Count:", `${message.guild.memberCount}`, true)
             .addField("Role Count:", `${message.guild.roles.size}`, true)
-            .setFooter('Blux-BOT - created by FaNnN#7247', bot.user.displayAvatarURL);
+            .setFooter('HQ-BOT - created by FaNnN#7247', bot.user.displayAvatarURL);
             
             message.channel.send({embed: serverEmbed});
         break;
@@ -204,10 +204,10 @@ bot.on('message', async message =>{
             if(!{body}) return message.channel.send("Ceva nu a mers bine ! Incearca din nou.")
 
             let cEmbed2 = new RichEmbed()
-            .setAuthor('Blux-BOT', message.guild.iconURL)
+            .setAuthor('HQ-BOT', message.guild.iconURL)
             .setImage(body.file)
             .setTimestamp()
-            .setFooter('Blux-BOT - created by FaNnN#7247', bot.user.displayAvatarURL)
+            .setFooter('HQ-BOT - created by FaNnN#7247', bot.user.displayAvatarURL)
 
             message.channel.send(cEmbed2);
 
